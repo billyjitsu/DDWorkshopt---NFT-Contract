@@ -48,7 +48,7 @@ contract DDNFT is ERC721, Ownable {
         totalSupply++;
     }
 
-    function adminMint(address to) external onlyOwner {
+    function adminMint(address to) external  {
         require(!pause, "Contract Paused");
         require(totalSupply <= MAX_SUPPLY, "Max supply exceeded");
         uint256 tokenId = _tokenIdCounter.current();
